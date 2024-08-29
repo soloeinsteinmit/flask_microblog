@@ -30,8 +30,8 @@
   <body>
     <div>
       Microblog:
-      <a href="/index" class="link-primary">Home</a>
-      <a href="/login" class="link-primary">Login</a>
+      <a href="{{ url_for('main.index') }}" class="link-primary">Home</a>
+      <a href="{{ url_for('main.login') }}" class="link-primary">Login</a>
     </div>
     {% with messages = get_flashed_messages() %} {% if messages %}
     <ul>

@@ -3,9 +3,11 @@
 <form action="" method="post" novalidate style="max-width: 500px; margin-left: 50px">
     {{ form.hidden_tag() }}
     <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">
+        <label for="exampleFormControlInput1" class="form-label">
       {{ form.username.label }}
-    </label> {{ form.username(class_="form-control", id="formGroupExampleInput", placeholder="Username") }}
+    </label> {{ form.username(class_="form-control", id="exampleFormControlInput1", placeholder="Username") }} {% for error in form.username.errors %}
+
+        <span style="color: red">[{{error}}]</span> {% endfor %}
     </div>
     <!-- <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -19,7 +21,9 @@
     >
 
     {{ form.password(class_="form-control", id="exampleInputPassword1",
-    placeholder="Enter Password") }}
+    placeholder="Enter Password") }} {% for error in form.password.errors %}
+    <span style="color: red">[{{error}}]</span>
+    {% endfor %}
   </div>
   <div class="mb-3 form-check">
     {{ form.remember_me(class_="form-check-input", id="exampleCheck1") }}
