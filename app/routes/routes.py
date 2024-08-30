@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint, flash, redirect, url_for
-from forms import LoginForm
+from app.forms import LoginForm
 
 microblog = Blueprint('main', __name__)
 
